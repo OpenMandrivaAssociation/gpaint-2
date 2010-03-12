@@ -1,6 +1,6 @@
 %define	name	gpaint-2
 %define	version	0.3.3
-%define release %mkrel 2 
+%define release %mkrel 3 
 
 Name:		%{name}
 Summary:	Simple, easy-to-use paint program
@@ -45,6 +45,7 @@ Icon=graphics_section
 Terminal=false
 Type=Application
 Categories=Graphics;
+MimeType=image/gif;image/jpeg;image/png;image/bmp;image/x-eps;image/x-ico;image/x-portable-bitmap;image/x-portable-pixmap;image/x-xbitmap;image/x-xpixmap;
 EOF
 
 %clean
@@ -56,4 +57,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/%{name}
 %{_datadir}/gpaint/glade/gpaint.glade
 %{_datadir}/applications/%{name}.desktop
-
