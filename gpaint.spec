@@ -1,13 +1,9 @@
-%define	name	gpaint-2
-%define	version	0.3.3
-%define release %mkrel 3 
-
-Name:		%{name}
+Name:		gpaint-2
 Summary:	Simple, easy-to-use paint program
-Version:	%{version}
-Release:	%{release}
+Version:	0.3.3
+Release:	%mkrel 4
 License:	GPLv2+
-Source0:	http://alpha.gnu.org/gnu/gpaint/%{name}-%{version}.tar.gz
+Source0:	http://www.gnu.org/software/gpaint/#downloading/%{name}-%{version}.tar.gz
 URL:		http://www.gnu.org/software/gpaint/
 Group:		Graphics
 Patch0:		gpaint-2-0.3.3-fix-drawing-fnt.patch
