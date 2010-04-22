@@ -1,13 +1,13 @@
 Name:		gpaint-2
 Summary:	Simple, easy-to-use paint program
 Version:	0.3.3
-Release:	%mkrel 5
+Release:	%mkrel 6
 License:	GPLv2+
 Source0:	http://www.gnu.org/software/gpaint/#downloading/%{name}-%{version}.tar.gz
 URL:		http://www.gnu.org/software/gpaint/
 Group:		Graphics
 Patch0:		gpaint-2-0.3.3-fix-drawing-fnt.patch
-Patch1:		gpaint-2-0.3.3-fix-rebuild.patch
+Patch1:		gpaint-2-0.3.3-remove-entry-menu.h.patch
 Patch2:		gpaint-2-0.3.3-fix-crash-on-font-selection.patch
 Patch3:		gpaint-2-0.3.3-fix-crash-on-saving-in-unsupported-format.patch
 Patch4:		gpaint-2-0.3.3-fix-not-printable-string.patch
