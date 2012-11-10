@@ -1,0 +1,12 @@
+Index: src/menu.c
+===================================================================
+--- src/menu.c
++++ src/menu.c	2010-03-10 22:07:47.000000000 +0100
+@@ -34,7 +34,6 @@
+ #include "image.h"
+ #include "image_processing.h"
+ #include "tool_palette.h"
+-#include "menu.h"
+ #include "print.h"
+ #include "file.h"
+ #include "text.h"

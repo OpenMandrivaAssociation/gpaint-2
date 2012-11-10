@@ -1,0 +1,13 @@
+Index: b/src/drawing.c
+===================================================================
+--- a/src/drawing.c	2009-12-19 17:11:48.000000000 -0200
++++ b/src/drawing.c	2009-12-19 17:12:10.000000000 -0200
+@@ -427,7 +427,7 @@
+                _("Do you want to save the changes you made to \"%s\"?\nYour changes will be lost if you don't save them."),
+                drawing->filename->str);
+ #ifdef GTK_STOCK_DISCARD
+-        gtk_dialog_add_button(GTK_DIALOG(dialog), GTK_STOCK_DISCARD,GTK_RESPONSE_DISCARD);
++        gtk_dialog_add_button(GTK_DIALOG(dialog), GTK_STOCK_DISCARD,GTK_RESPONSE_NO);
+ #else
+         gtk_dialog_add_button(GTK_DIALOG(dialog), _("Close _without Saving"), GTK_RESPONSE_NO);
+ #endif /* !GTK_STOCK_DISCARD */

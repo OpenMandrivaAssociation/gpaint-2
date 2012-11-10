@@ -1,0 +1,70 @@
+diff -urNad gpaint-0.3.3~/src/callbacks.h gpaint-0.3.3/src/callbacks.h
+--- gpaint-0.3.3~/src/callbacks.h	2007-09-05 02:54:08.000000000 -0300
++++ gpaint-0.3.3/src/callbacks.h	2009-12-18 10:56:24.000000000 -0200
+@@ -359,18 +359,10 @@
+ 
+ void
+ on_foreground_color_picker_color_set   (GtkColorButton *gnomecolorpicker,
+-                                        guint            arg1,
+-                                        guint            arg2,
+-                                        guint            arg3,
+-                                        guint            arg4,
+                                         gpointer         user_data);
+ 
+ void
+ on_background_color_picker_color_set   (GtkColorButton *gnomecolorpicker,
+-                                        guint            arg1,
+-                                        guint            arg2,
+-                                        guint            arg3,
+-                                        guint            arg4,
+                                         gpointer         user_data);
+ 
+ void
+diff -urNad gpaint-0.3.3~/src/color_palette.c gpaint-0.3.3/src/color_palette.c
+--- gpaint-0.3.3~/src/color_palette.c	2007-09-10 06:33:17.000000000 -0300
++++ gpaint-0.3.3/src/color_palette.c	2009-12-18 10:56:03.000000000 -0200
+@@ -338,7 +338,7 @@
+     g_assert(swatch);
+     canvas = canvas_lookup(swatch->widget);
+     gdk_gc_get_values(swatch->gc, &gcvalues);
+-    
++
+     if (mode==FOREGROUND)
+     {
+         change_foreground_color(canvas, &(gcvalues.foreground));
+@@ -362,15 +362,12 @@
+  */
+ void
+ on_foreground_color_picker_color_set   (GtkColorButton *gnomecolorpicker,
+-                                        guint            arg1,
+-                                        guint            arg2,
+-                                        guint            arg3,
+-                                        guint            arg4,
+                                         gpointer         user_data)
+ {
+-    GdkColor color = {0, arg1, arg2, arg3};
++    GdkColor color;
+     gpaint_canvas *canvas = canvas_lookup(GTK_WIDGET(gnomecolorpicker));
+     
++    gtk_color_button_get_color(gnomecolorpicker, &color);
+     gdk_color_alloc(gdk_colormap_get_system(), &color);
+     change_foreground_color(canvas, &color);
+ }
+@@ -380,15 +377,12 @@
+  */
+ void
+ on_background_color_picker_color_set   (GtkColorButton *gnomecolorpicker,
+-                                        guint            arg1,
+-                                        guint            arg2,
+-                                        guint            arg3,
+-                                        guint            arg4,
+                                         gpointer         user_data)
+ {
+-    GdkColor color = {0, arg1, arg2, arg3};
++    GdkColor color;
+     gpaint_canvas *canvas = canvas_lookup(GTK_WIDGET(gnomecolorpicker));
+ 
++    gtk_color_button_get_color(gnomecolorpicker, &color);
+     gdk_color_alloc(gdk_colormap_get_system(), &color);
+     change_background_color(canvas, &color);
+ }
