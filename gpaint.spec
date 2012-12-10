@@ -60,3 +60,36 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/%{name}
 %{_datadir}/gpaint/glade/gpaint.glade
 %{_datadir}/applications/%{name}.desktop
+
+
+%changelog
+* Sun Dec 05 2010 Oden Eriksson <oeriksson@mandriva.com> 0.3.3-7mdv2011.0
++ Revision: 610972
+- rebuild
+
+* Thu Apr 22 2010 Sandro Cazzaniga <kharec@mandriva.org> 0.3.3-6mdv2010.1
++ Revision: 537771
+- Given a better name for a patch.
+
+* Wed Apr 21 2010 Sandro Cazzaniga <kharec@mandriva.org> 0.3.3-5mdv2010.1
++ Revision: 537540
+- add 4 patches from upstream:
+- Patch2:         gpaint-2-0.3.3-fix-crash-on-font-selection.patch
+- Patch3:         gpaint-2-0.3.3-fix-crash-on-saving-in-unsupported-format.patch
+- Patch4:         gpaint-2-0.3.3-fix-not-printable-string.patch
+- Patch5:         gpaint-2-0.3.3-fix-color-selection.patch
+
+* Wed Apr 07 2010 Sandro Cazzaniga <kharec@mandriva.org> 0.3.3-4mdv2010.1
++ Revision: 532505
+- don't define name, version and release on top of spec.
+- fix source0
+
+* Fri Mar 12 2010 Sandro Cazzaniga <kharec@mandriva.org> 0.3.3-3mdv2010.1
++ Revision: 518303
+- Add "MimeType=" in desktop file
+
+* Thu Mar 11 2010 Sandro Cazzaniga <kharec@mandriva.org> 0.3.3-2mdv2010.1
++ Revision: 518284
+- import gpaint-2
+
+
