@@ -1,7 +1,7 @@
 Summary:	Simple, easy-to-use paint program
 Name:		gpaint-2
 Version:	0.3.3
-Release:	8
+Release:	9
 License:	GPLv2+
 Group:		Graphics
 Source0:	http://www.gnu.org/software/gpaint/downloading/%{name}-%{version}.tar.gz
