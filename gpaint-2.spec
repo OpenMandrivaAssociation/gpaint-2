@@ -1,4 +1,5 @@
 %global optflags %{optflags} -Wno-incompatible-function-pointer-types
+%global optflags %{optflags} -Wno-error -Wno-implicit-function-declaration
 
 Summary:	Simple, easy-to-use paint program
 Name:		gpaint-2
