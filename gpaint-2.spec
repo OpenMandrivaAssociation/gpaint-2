@@ -1,3 +1,5 @@
+%global optflags %{optflags} -Wno-incompatible-function-pointer-types
+
 Summary:	Simple, easy-to-use paint program
 Name:		gpaint-2
 Version:	0.3.4
