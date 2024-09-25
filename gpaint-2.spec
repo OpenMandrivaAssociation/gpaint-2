@@ -1,18 +1,18 @@
+%global optflags %{optflags} -Wno-incompatible-function-pointer-types
+%global optflags %{optflags} -Wno-error -Wno-implicit-function-declaration
+
 Summary:	Simple, easy-to-use paint program
 Name:		gpaint-2
-Version:	0.3.3
-Release:	9
+Version:	0.3.4
+Release:	1
 License:	GPLv2+
 Group:		Graphics
-Source0:	http://www.gnu.org/software/gpaint/downloading/%{name}-%{version}.tar.gz
-Url:		http://www.gnu.org/software/gpaint/
-Patch0:		gpaint-2-0.3.3-fix-drawing-fnt.patch
-Patch1:		gpaint-2-0.3.3-remove-entry-menu.h.patch
-Patch2:		gpaint-2-0.3.3-fix-crash-on-font-selection.patch
-Patch3:		gpaint-2-0.3.3-fix-crash-on-saving-in-unsupported-format.patch
-Patch4:		gpaint-2-0.3.3-fix-not-printable-string.patch
-Patch5:		gpaint-2-0.3.3-fix-color-selection.patch
+Source0:	https://alpha.gnu.org/gnu/gpaint/gpaint-2-%{version}.tar.gz
+Url:		https://www.gnu.org/software/gpaint/
+
 BuildRequires:	pkgconfig(libglade-2.0)
+BuildRequires:  pkgconfig(gtk+-2.0)
+BuildRequires:  intltool
 
 %description
 GNU Paint. A simple, easy-to-use paint program for GNOME. This is a port of
@@ -27,20 +27,14 @@ xpaint that takes advantages of features unique to the GNOME environment.
 #----------------------------------------------------------------------------
 
 %prep
-%setup -q
-%patch0 -p1
-%patch1 -p0
-%patch2 -p1
-%patch3 -p1
-%patch4 -p1
-%patch5 -p1
+%autosetup -n %{name}-%{version} -p1
 
 %build
-%configure2_5x
-%make LIBS="-lm"
+%configure
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 %find_lang %{name}
 
 #mdk menu entry
