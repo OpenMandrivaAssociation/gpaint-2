@@ -10,6 +10,11 @@ Group:		Graphics
 Source0:	https://alpha.gnu.org/gnu/gpaint/gpaint-2-%{version}.tar.gz
 Url:		https://www.gnu.org/software/gpaint/
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(libglade-2.0)
 BuildRequires:  pkgconfig(gtk+-2.0)
 BuildRequires:  intltool
